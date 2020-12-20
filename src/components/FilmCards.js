@@ -14,10 +14,10 @@ const FilmCards = () => {
       setLoading(true);
       setError(false);
       try {
-        console.log("here in getFilms");
+        // console.log("here in getFilms");
         const res = await axios.get("https://ghibliapi.herokuapp.com/films");
 
-        console.log("res data", res.data);
+        // console.log("res data", res.data);
 
         setFilmData(res.data);
       } catch (error) {
@@ -33,7 +33,10 @@ const FilmCards = () => {
   return (
     <>
       <SearchBar />
-      <div className="film-card-container">
+      <div
+        className="film-card-container"
+        onScroll={() => console.log("scroll")}
+      >
         {filmData.map((film) => {
           return <IndividualFilms key={film.id} film={film} />;
         })}

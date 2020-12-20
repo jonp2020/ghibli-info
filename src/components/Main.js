@@ -7,7 +7,10 @@ import Film from "./Film";
 
 const Main = () => {
   return (
-    <main className={`main-container`}>
+    <main
+      className={`main-container`}
+      // onScroll={() => console.log("scroll in main container")}
+    >
       <ImageBackground />
       <div className="nav-container">
         <ul className="nav-list-wrapper">
@@ -22,10 +25,21 @@ const Main = () => {
           <li>Themes</li>
         </ul>
       </div>
-      <Router primary={false}>
-        <FilmCards path="/films" />
-        <Film path="/films/:film_id" />
-      </Router>
+      <div
+        className="router-container"
+        onScroll={() =>
+          console.log("scroll in main container router container")
+        }
+      >
+        <Router
+          className="router-wrapper"
+          primary={false}
+          onScroll={() => console.log("scroll in main")}
+        >
+          <FilmCards path="/films" />
+          <Film path="/films/:filmTitle" />
+        </Router>
+      </div>
     </main>
   );
 };
