@@ -2,8 +2,8 @@ import React from "react";
 import { Router, Link } from "@reach/router";
 import FilmCards from "./FilmCards";
 import ImageBackground from "./ImageBackground";
-
 import Film from "./Film";
+import CharacterCards from "./CharacterCards";
 
 const Main = () => {
   return (
@@ -20,7 +20,11 @@ const Main = () => {
             </Link>
           </li>
           <li>Directors</li>
-          <li>Characters</li>
+          <li>
+            <Link className="nav-links" to="/characters">
+              Characters
+            </Link>
+          </li>
           <li>Vehicles</li>
           <li>Themes</li>
         </ul>
@@ -31,13 +35,10 @@ const Main = () => {
           console.log("scroll in main container router container")
         }
       >
-        <Router
-          className="router-wrapper"
-          primary={false}
-          onScroll={() => console.log("scroll in main")}
-        >
+        <Router className="router-wrapper" primary={false}>
           <FilmCards path="/films" />
           <Film path="/films/:filmTitle" />
+          <CharacterCards path="/characters" />
         </Router>
       </div>
     </main>
