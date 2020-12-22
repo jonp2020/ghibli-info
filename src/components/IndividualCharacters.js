@@ -1,8 +1,7 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const IndividualCharacters = ({ character, films }) => {
-  // console.log("film characters data", character);
-
   const filmIdArray = [];
   const filmTitlesArray = [];
   const urlRegex = /films.*/;
@@ -20,15 +19,18 @@ const IndividualCharacters = ({ character, films }) => {
     });
   });
 
-  const appearsIn = filmTitlesArray.map((name) => {
+  const appearsIn = filmTitlesArray.map((name, i) => {
+    const filmTitle = name.replace(/\s/g, "_");
     return (
-      <p>
+      <Link
+        className="indi-film-link"
+        to={`/films/${filmTitle}`}
+        state={filmIdArray[i]}
+      >
         <strong>{name}</strong>
-      </p>
+      </Link>
     );
   });
-
-  // console.log("filmIdArray", filmIdArray);
 
   return (
     <div className="individual-character-wrapper">
@@ -36,12 +38,12 @@ const IndividualCharacters = ({ character, films }) => {
       <img src="http://placehold.it/100x100" alt={character.name} />
       <h1>{character.name}</h1>
       <div className="character-desccription">
-        <p>Age: {character.age}</p>
+        <p>Age: {character.age ? character.age : "Unknown"}</p>
         <p>Hair color: {character.hair_color}</p>
         <p>Eye color: {character.eye_color}</p>
+        <p className="appears-in">Appears in:</p>
+        {appearsIn}
       </div>
-      <p className="appears-in">Appears in:</p>
-      {appearsIn}
     </div>
   );
 };

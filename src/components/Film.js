@@ -28,6 +28,7 @@ const Film = (props) => {
     } catch (error) {
       setError(true);
       console.log(error);
+      setError(true);
     }
     setLoading(false);
   }

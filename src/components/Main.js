@@ -4,13 +4,11 @@ import FilmCards from "./FilmCards";
 import ImageBackground from "./ImageBackground";
 import Film from "./Film";
 import CharacterCards from "./CharacterCards";
+import DirectorCards from "./DirectorCards";
 
 const Main = () => {
   return (
-    <main
-      className={`main-container`}
-      // onScroll={() => console.log("scroll in main container")}
-    >
+    <main className={`main-container`}>
       <ImageBackground />
       <div className="nav-container">
         <ul className="nav-list-wrapper">
@@ -19,13 +17,21 @@ const Main = () => {
               Films
             </Link>
           </li>
-          <li>Directors</li>
+          <li>
+            <Link className="nav-links" to="/directors">
+              Directors
+            </Link>
+          </li>
           <li>
             <Link className="nav-links" to="/characters">
               Characters
             </Link>
           </li>
-          <li>Vehicles</li>
+          <li>
+            <Link className="nav-links" to="/vehicles">
+              Vehicles
+            </Link>
+          </li>
           <li>Themes</li>
         </ul>
       </div>
@@ -39,6 +45,7 @@ const Main = () => {
           <FilmCards path="/films" />
           <Film path="/films/:filmTitle" />
           <CharacterCards path="/characters" />
+          <DirectorCards path="/directors" />
         </Router>
       </div>
     </main>

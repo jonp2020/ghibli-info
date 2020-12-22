@@ -325,6 +325,7 @@
     align-items: center;
   }
 }
+
 .indi-character-cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -362,9 +363,46 @@
   padding: 0.3rem;
 }
 
-.indi-character-cards-container .appears-in {
-  padding: 0.5rem;
-  font-size: 1rem;
+.appears-in {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.indi-film-link {
+  text-decoration: none;
+  color: #109ceb;
+  padding: 0.3rem;
+}
+
+.indi-film-link:hover {
+  color: #5c5b5b;
+}
+
+.indi-directors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-bottom: 10rem;
+  z-index: -1;
+}
+
+.indi-director-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  width: 300px;
+  height: 500px;
+  padding-bottom: 4rem;
+}
+
+.indi-director-wrapper h1 {
+  font-size: 1.3rem;
+  padding: 0.8rem;
 }
 
 ::-webkit-scrollbar {
