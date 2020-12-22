@@ -23,6 +23,7 @@ const IndividualCharacters = ({ character, films }) => {
     const filmTitle = name.replace(/\s/g, "_");
     return (
       <Link
+        key={i}
         className="indi-film-link"
         to={`/films/${filmTitle}`}
         state={filmIdArray[i]}

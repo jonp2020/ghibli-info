@@ -23,8 +23,6 @@ const CharacterCards = () => {
         setFilmData(dataFilms);
 
         setLoading(false);
-        console.log("character data ", dataChars);
-        console.log("film data ", dataFilms);
       } catch (error) {
         console.log(error);
       }
@@ -36,10 +34,10 @@ const CharacterCards = () => {
   if (loading) return "Loading...";
   return (
     <div className="indi-character-cards-container">
-      {characterData.map((character) => {
+      {characterData.map((character, i) => {
         return (
           <IndividualCharacters
-            key="character.id"
+            key={i}
             character={character}
             films={filmData}
           />

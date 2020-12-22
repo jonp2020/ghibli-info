@@ -5,6 +5,7 @@ import ImageBackground from "./ImageBackground";
 import Film from "./Film";
 import CharacterCards from "./CharacterCards";
 import DirectorCards from "./DirectorCards";
+import VehiclesCards from "./VehiclesCards";
 
 const Main = () => {
   return (
@@ -35,17 +36,13 @@ const Main = () => {
           <li>Themes</li>
         </ul>
       </div>
-      <div
-        className="router-container"
-        onScroll={() =>
-          console.log("scroll in main container router container")
-        }
-      >
+      <div className="router-container">
         <Router className="router-wrapper" primary={false}>
           <FilmCards path="/films" />
           <Film path="/films/:filmTitle" />
           <CharacterCards path="/characters" />
           <DirectorCards path="/directors" />
+          <VehiclesCards path="/vehicles" />
         </Router>
       </div>
     </main>

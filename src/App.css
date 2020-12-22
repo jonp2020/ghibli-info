@@ -405,6 +405,40 @@
   padding: 0.8rem;
 }
 
+.indi-vehicles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  padding-bottom: 10rem;
+  z-index: -1;
+}
+
+.indi-vehicles-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  width: 300px;
+  height: 350px;
+  padding-bottom: 4rem;
+}
+
+.indi-vehicles-wrapper h1 {
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.indi-vehicles-wrapper p {
+  margin: 0.2rem;
+  align-self: flex-start;
+  text-align: left;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
